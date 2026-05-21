@@ -28,6 +28,9 @@ return (static function (string $extKey = 'charts') {
             'searchFields' => 'title',
             'dynamicConfigFile' => '',
             'iconfile' => 'EXT:' . $extKey . '/Resources/Public/Icons/Extension.svg',
+            'security' => [
+                'ignorePageTypeRestriction' => true,
+            ],
         ],
         'types' => [
             0 => [
