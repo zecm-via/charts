@@ -23,7 +23,6 @@ abstract class AbstractLinkViewHelper extends AbstractTagBasedViewHelper
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-        $this->registerUniversalTagAttributes();
         $this->registerTagAttribute('recordId', 'int', 'uid of the record to edit', true);
         $this->registerTagAttribute('recordTable', 'string', 'string of the table record', true);
     }
@@ -32,7 +31,7 @@ abstract class AbstractLinkViewHelper extends AbstractTagBasedViewHelper
     {
         /** @var string $renderedContent */
         $renderedContent = $this->renderChildren();
-        $classes = trim((string) $this->arguments['class']);
+        $classes = trim((string) $this->additionalArguments['class']);
         if (!empty($classes)) {
             $this->tag->addAttribute('class', $classes);
         }

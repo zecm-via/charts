@@ -12,7 +12,6 @@ return (static function (string $extKey = 'charts') {
             'label' => 'title',
             'tstamp' => 'tstamp',
             'crdate' => 'crdate',
-            'cruser_id' => 'cruser_id',
             'dividers2tabs' => true,
             'versioningWS' => true,
             'languageField' => 'sys_language_uid',
@@ -35,7 +34,7 @@ return (static function (string $extKey = 'charts') {
         'types' => [
             0 => [
                 'showitem' => implode(
-                    [
+                    '', [
                         '--palette--;;corePalette,type,labels,--palette--;;datasetPalette,',
                         '--div--;' . $ll . '.tab_colors,background_colors, border_colors,',
                         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,hidden,starttime,endtime'
@@ -44,7 +43,7 @@ return (static function (string $extKey = 'charts') {
             ],
             1 => [
                 'showitem' => implode(
-                    [
+                    '', [
                         '--palette--;;corePalette,type,spreadsheet_assets,spreadsheet_labels,--palette--;;spreadsheetDatasetPalette,',
                         '--div--;' . $ll . '.tab_colors,background_colors, border_colors,',
                         '--div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,hidden,starttime,endtime'
@@ -75,7 +74,7 @@ return (static function (string $extKey = 'charts') {
                 'label' => $ll . '.title',
                 'config' => [
                     'type' => 'input',
-                    'eval' => 'required',
+                    'required' => true,
                 ],
             ],
             'type' => [
@@ -202,7 +201,7 @@ return (static function (string $extKey = 'charts') {
                     ],
                     'overrideChildTca' => [
                         'types' => [
-                            \TYPO3\CMS\Core\Resource\File::FILETYPE_APPLICATION => [
+                            \TYPO3\CMS\Core\Resource\FileType::APPLICATION->value => [
                                 'showitem' => '--palette--;;filePalette',
                             ],
                         ],

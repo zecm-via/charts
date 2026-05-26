@@ -19,7 +19,6 @@ defined('TYPO3') or die();
                 'label' => $ll . 'tt_content.tx_charts_chartdata',
                 'config' => [
                     'type' => 'group',
-                    'internal_type' => 'db',
                     'allowed' => 'tx_charts_domain_model_chartdata',
                     'size' => 1,
                     'minitems' => 1,

@@ -193,7 +193,7 @@ class ChartDataSpreadsheet extends ChartData
         $cellData = $extraction?->getBodyData() ?? [];
 
         // only get zero-indexed value arrays
-        return array_values(array_map(static fn ($data) => array_values($data), $cellData));
+        return array_values(array_map(array_values(...), $cellData));
     }
 
     private function extractByDSN(string $dsn): ExtractionValueObject
