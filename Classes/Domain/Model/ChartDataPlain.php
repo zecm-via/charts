@@ -23,7 +23,7 @@ class ChartDataPlain extends ChartData
             );
         }
 
-        return array_values(array_map('array_values', $data));
+        return array_values(array_map(array_values(...), $data));
     }
 
     /**
@@ -41,7 +41,7 @@ class ChartDataPlain extends ChartData
             );
         }
 
-        return array_values(array_map(static fn ($item) => array_map('floatval', array_values($item)), $data));
+        return array_values(array_map(static fn ($item) => array_map(floatval(...), array_values($item)), $data));
     }
 
     /**
