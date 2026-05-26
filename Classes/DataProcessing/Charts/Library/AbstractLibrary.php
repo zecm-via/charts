@@ -84,7 +84,7 @@ abstract class AbstractLibrary implements LibraryInterface
         if ($pageRenderer instanceof PageRenderer) {
             foreach ($assets as $asset => $options) {
                 $pageRenderer->addJsFooterLibrary(
-                    md5($asset),
+                    md5((string) $asset),
                     $asset,
                     (string) ($options['type'] ?? 'text/javascript'),
                     (bool) ($options['compress'] ?? false),
